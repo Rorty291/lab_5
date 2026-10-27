@@ -1,11 +1,16 @@
+﻿from src import sponsor
 from src.team import Team
 from src.coach import Coach
 from src.player import Player
+from src.sponsor import Sponsor
+from src.trainingprogram import TrainingProgram
+from src.tournament import Tournament
 
 def main():
     # Створення команди
     team = Team("Counter-Strike 2")
-
+    # Додавання сонсора
+    sponsor = Sponsor ("Vladyslav Shovkun67")
     # Додавання гравців
     player1 = Player("Vladyslav Shovkun", 19, "Ukraine", "Rifler")
     player2 = Player("Alexandr Titikov", 18, "Poland", "Rifler")
@@ -16,7 +21,7 @@ def main():
     team.add_member(player3)
 
     # Додавання журналів
-    coach1 = Coach("Irina Zolo", 25, "Ukraine", "Slow")
+    coach1 = Coach("Irina Zolo", 25, "Ukraine", "SlowIQ")
     coach2 = Coach("Kadat Uzbekovich", 31, "Kyiv People's Republic", "Smart")
 
     team.add_member(coach1)
@@ -53,6 +58,9 @@ def main():
     for coach in team.get_all_coaches():
         print(coach)
     print()
+    # Виведення інформації про спонсора
+    print (f"Всі спонсори команди: {sponsor.name}")
+    print()
 
     # Видалення гравця
     print("Видалення 'Alexandr Titikov'")
@@ -70,6 +78,22 @@ def main():
         team.add_member("Це не об'єкт TeamMember")
     except TypeError as e:
         print(f"Помилка: {e}")
+
+
+    print("тим меню:")
+    print("1. Всі учасники команди")
+    print("2. Ще якийсь пункт")
+    number = int(input(" число"))
+    if number == 1:
+        print("Всі учасники команди:")
+        for item in team.members:
+            print(item)
+    if number == 2:
+        print("скоро")
+
+
+
+
 
 
 if __name__ == "__main__":
