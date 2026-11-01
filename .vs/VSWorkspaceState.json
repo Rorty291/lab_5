@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\.idea",
     "\\src",
     "\\tests"
   ],
-  "SelectedNode": "\\src\\team.py",
+  "SelectedNode": "\\tests\\test_staff.py",
   "PreviewInSolutionExplorer": false
 }
