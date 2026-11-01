@@ -1,40 +1,39 @@
-﻿from src.coach import TeamMember
-from typing import List
-
+﻿from src.team import Team
 
 class Tournament:
-    def __init__(self, name: str, date: str, prize: str): 
-            self.name = name
-            self.date = date
-            self.prize = prize
-            self.teams = []
-
+    def __init__(self, name: str, date: str, prize: int):
+            self._name = name
+            self._date = date
+            self._prize = prize
+            self._teams = []
 
     @property
-    def name(self) -> str:
+    def name(self):
         return self._name
 
     @property
-    def date(self) -> str:
+    def date(self):
         return self._date
 
     @property
-    def date(self) -> str:
-        return self._date
+    def prize(self):
+        return self._prize
 
     @property
-    def prize_pool(self) -> float:
-        return self._prize_pool
-
-    @property
-    def teams(self) -> [TeamMember]:
+    def teams(self):
         # Повертаємо копію списку для захисту від прямої зміни ззовні
-        return list(self._teams)
+        return self._teams.copy()
 
-    def participateTournament(self, team: TeamMember) -> None:
+    def participate_tournament(self, team: Team):
         self._teams.append(team)
 
-    def __repr__(self) -> str:
-        return f"Tournament(name={self.name}, date={self.date}, prize_pool={self.prize_pool}, teams={self.teams})"
+    def leave_tournament(self, team: Team):
+        self._teams.remove(team)
+
+    def __str__(self):
+        return f"Tournament: {self.name}, Date: {self.date}, Prize pool: ${self.prize}"
+
+    def __repr__(self):
+        return f"Tournament(name={self.name}, date={self.date}, prize_pool={self.prize}, teams={self.teams})"
 
 

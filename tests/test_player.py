@@ -12,7 +12,7 @@ class TestPlayer(unittest.TestCase):
         self.assertEqual(self.player.abilities, "Rifler")
 
     def test_str_representation(self):
-        expected = "Alex Goren (20 y.o.) from Ukraine | Навички: 780-846352"
+        expected = "Alex Goren (20 y.o.) from Ukraine | Навички: Rifler"
         self.assertEqual(str(self.player), expected)
 
     def test_repr_representation(self):
