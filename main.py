@@ -9,7 +9,7 @@ from src.tournament import Tournament
 
 import random
 
-from tournament import Tournament
+from src.tournament import Tournament
 
 
 def print_any(lis: list | None):
